@@ -12,6 +12,13 @@ import top.sorie.minimq.common.MqMsg;
 public class PublishCmd extends MqCmd {
     private MqMsg msg;
 
+    public PublishCmd() {
+        this.setCmd(CMD_PUBLISH);
+    }
+    public PublishCmd(String topic, String msg) {
+        this.setCmd(CMD_PUBLISH);
+        this.msg = new MqMsg(topic, msg);
+    }
     @Override
     public CmdResult exec(Broker broker) {
         if (msg == null || msg.getTopic() == null) {

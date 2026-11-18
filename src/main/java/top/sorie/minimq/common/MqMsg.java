@@ -7,6 +7,14 @@ public class MqMsg {
     private String topic;
     private String content;
 
+    public MqMsg(String topic, String content) {
+        this.topic = topic;
+        this.content = content;
+    }
+
+    public MqMsg() {
+    }
+
     public String getTopic() {
         return topic;
     }
